@@ -54,7 +54,7 @@ In the **`index.js`** file, we imported Express, initialized the app, and set up
 ### **Milestone 4: Backend Structure and Initial Setup**
 creating user model, user controller and Multer support
 
-Milestone 5
+### **Milestone 5
 Sign-Up Page with Validation
 Overview
 This project focuses on building a clean and user-friendly sign-up page where users can register by entering their details.
