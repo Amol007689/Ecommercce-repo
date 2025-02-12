@@ -1,3 +1,4 @@
+
 const{model,Schema}=require('mongoose');
 
 
@@ -37,7 +38,7 @@ const productSchema=new Schema({
         },
         createdAt: {
             type: Date,
-            default: Date.now, // Automatically set the creation date
+            default: Date.now, 
         },
     },
     {
@@ -46,4 +47,4 @@ const productSchema=new Schema({
 )
 
 const ProductModel = model('Product', productSchema)
- module.export = ProductModel
+module.export = ProductModel
