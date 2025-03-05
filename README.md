@@ -148,67 +148,138 @@ By the end of this milestone, you will:
 
 This milestone is crucial in connecting the backend and frontend, making your application fully functional. Keep going! 🚀
 
-## Milestone 12
+E-commerce Project - Milestones 12-16
+This document outlines the progress and key learnings achieved during milestones 12-16 of the E-commerce project.
 
-### Achievements:
-- **Checkout Process:** Implemented a complete checkout page with form validation and integrated payment gateway (Stripe/PayPal).
-- **User Authentication:** Enhanced login/registration with "remember me" functionality.
-- **Order Confirmation:** Created a page to display order details after successful payment.
-- **Bug Fixes & UI Improvements:** Fixed bugs and improved the user interface.
+Milestone 12: Data Fetching and Display
+Learning Goals:
 
-## Milestone 13
+Implement an endpoint to filter and retrieve product data from MongoDB based on user email.
+Develop frontend logic to receive and dynamically display fetched product data using the previously created product card component.
+Key Achievements:
 
-In this milestone, the following changes were made:
+Successfully implemented an endpoint in the backend to filter products based on user email.
+Integrated the endpoint with the frontend, enabling the dynamic display of filtered products.
+Enhanced the product card component for better user experience.
+Challenges:
 
-- [List the major features or fixes you implemented here]
-- [Any new functionality added, e.g., new pages, forms, or components]
-- [Changes in existing functionality, if any]
-- [Bug fixes, enhancements, or performance improvements]
-- 
+[Describe any challenges encountered during implementation, e.g., data formatting issues, performance bottlenecks]
+[Explain how these challenges were addressed]
+Milestone 13: Data Updating
+Learning Goals:
 
-## Milestone 14
-In this milestone, the following changes were made:
+Implement an endpoint to update existing product data in MongoDB.
+Develop frontend functionality to auto-fill forms with existing data and provide options for editing.
+Key Achievements:
 
-- [List the major features or fixes you implemented here]
-- [Any new functionality added, e.g., new pages, forms, or components]
-- [Changes in existing functionality, if any]
-- [Bug fixes, enhancements, or performance improvements]
-ilestone 17 - Cart Management API
-Project Overview
+Created an endpoint to handle product updates in the backend.
+Implemented frontend logic to pre-populate forms with existing product data.
+Enabled users to edit product information and submit updates.
+Challenges:
+
+[Describe any challenges encountered during implementation, e.g., handling data validation, preventing overwriting]
+[Explain how these challenges were addressed]
+Milestone 14: Data Deletion
+Learning Goals:
+
+Implement an endpoint to delete a specific product from MongoDB based on its ID.
+Integrate frontend logic to trigger product deletion requests.
+Key Achievements:
+
+Created an endpoint to delete products from the database.
+Implemented frontend functionality to initiate product deletion requests.
+Added appropriate safeguards and confirmations before deleting products.
+Challenges:
+
+[Describe any challenges encountered during implementation, e.g., handling accidental deletions, maintaining data integrity]
+[Explain how these challenges were addressed]
+Milestone 15: Navigation Component
+Learning Goals:
+
+Create a reusable navigation component for consistent user experience across multiple pages.
+Key Achievements:
+
+Developed a reusable navigation component.
+Successfully integrated the navigation component into multiple pages within the application.
+Challenges:
+
+[Describe any challenges encountered during implementation, e.g., handling responsive design, ensuring cross-browser compatibility]
+[Explain how these challenges were addressed]
+Milestone 16: Product Detail Page
+Learning Goals:
+
+Create a dedicated page to display individual product details.
+Implement functionality to add products to the cart with quantity selection.
+Key Achievements:
+
+Developed a product detail page with comprehensive information.
+Implemented features for selecting product quantity and adding items to the cart.
+Challenges:
+
+[Describe any challenges encountered during implementation, e.g., handling inventory updates, ensuring smooth cart interactions]
+[Explain how these challenges were addressed]
+Overall:
+
+[Summarize the overall progress and key learnings across all milestones. Mention any significant achievements or unexpected outcomes.]
+Future Plans:
+
+[Outline the next steps for the E-commerce project, such as:
+Implementing cart functionality
+Integrating payment gateways
+Enhancing user authentication and authorization]
+Note:
+
+This is a basic template. Please replace the bracketed sections with your specific details and accomplishments.
+Use Markdown syntax to format the README.md file for better readability..
+
+
+# Milestone 17 - Cart Management API
+
+## Project Overview
 This milestone involves modifying the user schema to store cart products and implementing an endpoint to receive product details and store them in the database.
 
-Tasks
-Edit the User Schema
+## Tasks
+1. **Edit the User Schema**
+   - Modify the existing user schema to include a `cart` field.
+   - Ensure the `cart` field stores product details such as `productId`, `quantity`, and `price`.
 
-Modify the existing user schema to include a cart field.
-Ensure the cart field stores product details such as productId, quantity, and price.
-Create an API Endpoint
+2. **Create an API Endpoint**
+   - Develop an endpoint to receive product details from the frontend.
+   - Validate the received data before storing it in the database.
+   - Update the user's cart with the received product details.
 
-Develop an endpoint to receive product details from the frontend.
-Validate the received data before storing it in the database.
-Update the user's cart with the received product details.
-Installation & Setup
-Prerequisites
-Node.js (v16 or later)
-MongoDB (local or cloud-based)
-npm or yarn package manager
-Steps to Run
-Clone the repository:
-git clone <repository-url>
-cd <project-folder>
-Install dependencies:
-npm install
-Set up environment variables in a .env file:
-MONGO_URI=<your-mongodb-connection-string>
-PORT=5000
-Start the server:
-npm start
-API Documentation
-1. Add Product to Cart
-Endpoint: POST /api/cart/add
+## Installation & Setup
+### Prerequisites
+- Node.js (v16 or later)
+- MongoDB (local or cloud-based)
+- npm or yarn package manager
 
-Request Body:
+### Steps to Run
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd <project-folder>
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Set up environment variables in a `.env` file:
+   ```env
+   MONGO_URI=<your-mongodb-connection-string>
+   PORT=5000
+   ```
+4. Start the server:
+   ```sh
+   npm start
+   ```
 
+## API Documentation
+### **1. Add Product to Cart**
+**Endpoint:** `POST /api/cart/add`
+
+**Request Body:**
+```json
 {
   "userId": "12345",
   "productId": "67890",
@@ -216,8 +287,10 @@ Request Body:
   "price": 100,
   "quantity": 2
 }
-Response:
+```
 
+**Response:**
+```json
 {
   "message": "Product added to cart successfully",
   "cart": [
@@ -229,58 +302,115 @@ Response:
     }
   ]
 }
-Tech Stack
-Backend: Node.js, Express.js
-Database: MongoDB, Mongoose
-E-commerce Project - Milestones 12-16 This document outlines the progress and key learnings achieved during milestones 12-16 of the E-commerce project.
+```
 
-Milestone 12: Data Fetching and Display Learning Goals:
+## Tech Stack
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
 
-Implement an endpoint to filter and retrieve product data from MongoDB based on user email. Develop frontend logic to receive and dynamically display fetched product data using the previously created product card component. Key Achievements:
 
-Successfully implemented an endpoint in the backend to filter products based on user email. Integrated the endpoint with the frontend, enabling the dynamic display of filtered products. Enhanced the product card component for better user experience. Challenges:
 
-[Describe any challenges encountered during implementation, e.g., data formatting issues, performance bottlenecks] [Explain how these challenges were addressed] Milestone 13: Data Updating Learning Goals:
 
-Implement an endpoint to update existing product data in MongoDB. Develop frontend functionality to auto-fill forms with existing data and provide options for editing. Key Achievements:
 
-Created an endpoint to handle product updates in the backend. Implemented frontend logic to pre-populate forms with existing product data. Enabled users to edit product information and submit updates. Challenges:
+E-commerce Project - Milestones 12-16
+This document outlines the progress and key learnings achieved during milestones 12-16 of the E-commerce project.
 
-[Describe any challenges encountered during implementation, e.g., handling data validation, preventing overwriting] [Explain how these challenges were addressed] Milestone 14: Data Deletion Learning Goals:
+Milestone 12: Data Fetching and Display
+Learning Goals:
 
-Implement an endpoint to delete a specific product from MongoDB based on its ID. Integrate frontend logic to trigger product deletion requests. Key Achievements:
+Implement an endpoint to filter and retrieve product data from MongoDB based on user email.
+Develop frontend logic to receive and dynamically display fetched product data using the previously created product card component.
+Key Achievements:
 
-Created an endpoint to delete products from the database. Implemented frontend functionality to initiate product deletion requests. Added appropriate safeguards and confirmations before deleting products. Challenges:
+Successfully implemented an endpoint in the backend to filter products based on user email.
+Integrated the endpoint with the frontend, enabling the dynamic display of filtered products.
+Enhanced the product card component for better user experience.
+Challenges:
 
-[Describe any challenges encountered during implementation, e.g., handling accidental deletions, maintaining data integrity] [Explain how these challenges were addressed] Milestone 15: Navigation Component Learning Goals:
+[Describe any challenges encountered during implementation, e.g., data formatting issues, performance bottlenecks]
+[Explain how these challenges were addressed]
+Milestone 13: Data Updating
+Learning Goals:
 
-Create a reusable navigation component for consistent user experience across multiple pages. Key Achievements:
+Implement an endpoint to update existing product data in MongoDB.
+Develop frontend functionality to auto-fill forms with existing data and provide options for editing.
+Key Achievements:
 
-Developed a reusable navigation component. Successfully integrated the navigation component into multiple pages within the application. Challenges:
+Created an endpoint to handle product updates in the backend.
+Implemented frontend logic to pre-populate forms with existing product data.
+Enabled users to edit product information and submit updates.
+Challenges:
 
-[Describe any challenges encountered during implementation, e.g., handling responsive design, ensuring cross-browser compatibility] [Explain how these challenges were addressed] Milestone 16: Product Detail Page Learning Goals:
+[Describe any challenges encountered during implementation, e.g., handling data validation, preventing overwriting]
+[Explain how these challenges were addressed]
+Milestone 14: Data Deletion
+Learning Goals:
 
-Create a dedicated page to display individual product details. Implement functionality to add products to the cart with quantity selection. Key Achievements:
+Implement an endpoint to delete a specific product from MongoDB based on its ID.
+Integrate frontend logic to trigger product deletion requests.
+Key Achievements:
 
-Developed a product detail page with comprehensive information. Implemented features for selecting product quantity and adding items to the cart. Challenges:
+Created an endpoint to delete products from the database.
+Implemented frontend functionality to initiate product deletion requests.
+Added appropriate safeguards and confirmations before deleting products.
+Challenges:
 
-[Describe any challenges encountered during implementation, e.g., handling inventory updates, ensuring smooth cart interactions] [Explain how these challenges were addressed] Overall:
+[Describe any challenges encountered during implementation, e.g., handling accidental deletions, maintaining data integrity]
+[Explain how these challenges were addressed]
+Milestone 15: Navigation Component
+Learning Goals:
 
-[Summarize the overall progress and key learnings across all milestones. Mention any significant achievements or unexpected outcomes.] Future Plans:
+Create a reusable navigation component for consistent user experience across multiple pages.
+Key Achievements:
 
-[Outline the next steps for the E-commerce project, such as: Implementing cart functionality Integrating payment gateways Enhancing user authentication and authorization] Note:
+Developed a reusable navigation component.
+Successfully integrated the navigation component into multiple pages within the application.
+Challenges:
 
-This is a basic template. Please replace the bracketed sections with your specific details and accomplishments. Use Markdown syntax to format the README.md file for better readability..
+[Describe any challenges encountered during implementation, e.g., handling responsive design, ensuring cross-browser compatibility]
+[Explain how these challenges were addressed]
+Milestone 16: Product Detail Page
+Learning Goals:
 
-Milestone 19 :- Creating a cart handler
-Cart Page Implementation
-Milestone Overview
+Create a dedicated page to display individual product details.
+Implement functionality to add products to the cart with quantity selection.
+Key Achievements:
+
+Developed a product detail page with comprehensive information.
+Implemented features for selecting product quantity and adding items to the cart.
+Challenges:
+
+[Describe any challenges encountered during implementation, e.g., handling inventory updates, ensuring smooth cart interactions]
+[Explain how these challenges were addressed]
+Overall:
+
+[Summarize the overall progress and key learnings across all milestones. Mention any significant achievements or unexpected outcomes.]
+Future Plans:
+
+[Outline the next steps for the E-commerce project, such as:
+Implementing cart functionality
+Integrating payment gateways
+Enhancing user authentication and authorization]
+Note:
+
+This is a basic template. Please replace the bracketed sections with your specific details and accomplishments.
+Use Markdown syntax to format the README.md file for better readability..
+
+
+# Milestone 19 :- Creating a cart handler
+
+# Cart Page Implementation
+
+## Milestone Overview
 By the end of this milestone, you will:
+- Create a cart page that displays the products inside the cart using an endpoint built in milestone 18.
+- Implement functionality to increase and decrease product quantity using `+` and `-` buttons.
+- Write an endpoint to handle increasing and decreasing product quantity.
 
-Create a cart page that displays the products inside the cart using an endpoint built in milestone 18.
-Implement functionality to increase and decrease product quantity using + and - buttons.
-Write an endpoint to handle increasing and decreasing product quantity.
-Project Structure
+---
+
+## Project Structure
+```
 project-root/
 │-- backend/
 │   ├── routes/
@@ -298,43 +428,171 @@ project-root/
 │   │   ├── App.js  # Main frontend entry point
 │
 │-- README.md  # Project Documentation
-Backend Implementation
-API Endpoints
-Get Cart Products
-Endpoint: GET /api/cart
+```
 
-Fetches all products in the cart.
-Returns a list of cart items with product details and quantities.
-Increase Product Quantity
-Endpoint: PUT /api/cart/increase/:productId
+---
 
-Increases the quantity of a specific product in the cart.
-Updates the database accordingly.
-Decrease Product Quantity
-Endpoint: PUT /api/cart/decrease/:productId
+## Backend Implementation
+### API Endpoints
 
-Decreases the quantity of a specific product in t
-Milestone-21
-🎯 Learning Goals
-By the end of this milestone, you will be able to:
-✅ Create a frontend form to collect address details
-✅ Accept the following inputs:
+#### Get Cart Products
+**Endpoint:** `GET /api/cart`
+- Fetches all products in the cart.
+- Returns a list of cart items with product details and quantities.
 
-Country
-City
-Address Line 1
-Address Line 2
-Zip Code
-Address Type (e.g., Home, Office, Other)
-🛠 Tech Stack
-Frontend: React.js
-State Management: useState (React Hook)
-Routing: React Router
-Form Handling: Controlled Components
-Backend (Optional, if needed): Express.js, MongoDB
-🚀 Project Setup
-🔹 1️⃣ Clone the Repository
+#### Increase Product Quantity
+**Endpoint:** `PUT /api/cart/increase/:productId`
+- Increases the quantity of a specific product in the cart.
+- Updates the database accordingly.
+
+#### Decrease Product Quantity
+**Endpoint:** `PUT /api/cart/decrease/:productId`
+- Decreases the quantity of a specific product in t
+
+
+
+
+
+# Milestone-21
+
+## 🎯 Learning Goals  
+By the end of this milestone, you will be able to:  
+✅ Create a **frontend form** to collect address details  
+✅ Accept the following inputs:  
+   - **Country**  
+   - **City**  
+   - **Address Line 1**  
+   - **Address Line 2**  
+   - **Zip Code**  
+   - **Address Type** (e.g., Home, Office, Other)  
+
+---
+
+## 🛠 Tech Stack  
+- **Frontend:** React.js  
+- **State Management:** useState (React Hook)  
+- **Routing:** React Router  
+- **Form Handling:** Controlled Components  
+- **Backend (Optional, if needed):** Express.js, MongoDB  
+
+---
+
+## 🚀 Project Setup  
+
+### 🔹 1️⃣ Clone the Repository  
+```sh
 git clone https://github.com/your-username/address-form.git
 cd address-form
 
 
+
+
+
+
+
+# 📦 Milestone 22: Store Address in User Profile  
+
+## 🚀 Overview  
+In this milestone, we have implemented a **backend endpoint** that allows users to **store their address** inside their profile in the database. This feature ensures that users can manage their addresses efficiently.  
+
+## 🎯 Learning Goals  
+By the end of this milestone, you will:  
+- Create a **backend endpoint** to store user addresses in the database.  
+- Update the **user profile schema** to include address details.  
+- Connect the frontend **AddressForm** with the backend API.  
+- Display the updated address in the **Profile page**.  
+
+## 🏗️ Project Structure  
+```
+/project-root
+│── /src
+│   ├── /Components
+│   │   ├── AddressForm.jsx   # Form to collect address details
+│   │   ├── Profile.jsx       # Displays user profile with stored address
+│   ├── /Model
+│   │   ├── userModel.js      # Defines user schema with address field
+│   ├── /Routes
+│   │   ├── user.js           # Backend routes for user profile and address update
+│   ├── App.jsx               # Includes routing for AddressForm and Profile
+│── server.js                 # Main server file
+│── package.json
+│── README.md
+```
+
+## 🔧 Installation & Setup  
+1. **Clone the repository**  
+   ```bash
+   git clone <repo-url>
+   cd project-root
+   ```
+
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
+
+3. **Run the server**  
+   ```bash
+   npm start
+   ```
+
+## 🛠️ API Endpoints  
+### 1️⃣ **Update Address**  
+**Endpoint:**  
+```
+POST /update-address
+```
+**Body:**  
+```json
+{
+  "email": "user@example.com",
+  "address": {
+    "country": "India",
+    "city": "Mumbai",
+    "address1": "123 Street Name",
+    "address2": "Apt 45",
+    "zipCode": "400001",
+    "addressType": "Home"
+  }
+}
+```
+**Response:**  
+```json
+{
+  "message": "Address updated successfully",
+  "user": {
+    "email": "user@example.com",
+    "address": { ... }
+  }
+}
+```
+
+### 2️⃣ **Fetch User Profile**  
+**Endpoint:**  
+```
+GET /profile?email=user@example.com
+```
+**Response:**  
+```json
+{
+  "user": {
+    "name": "John Doe",
+    "email": "user@example.com",
+    "address": { ... }
+  }
+}
+```
+
+## 🎯 Features Implemented  
+✔️ **User can add an address through AddressForm**  
+✔️ **Address is stored in the database inside user profile**  
+✔️ **Profile page displays stored address**  
+✔️ **Backend API updates and retrieves user address**  
+
+## 📌 Notes  
+- Ensure the backend server is running before testing.  
+- Update the `email` dynamically when integrating authentication.  
+- Test API using **Postman** or **Thunder Client** before connecting frontend.  
+
+## 🏁 Conclusion  
+Milestone 22 successfully integrates **address management** inside the user profile, enhancing the user experience with persistent address storage. 🚀
