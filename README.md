@@ -322,6 +322,107 @@ Backend (Optional, if needed): Express.js, MongoDB
 🔹 1️⃣ Clone the Repository
 git clone https://github.com/your-username/address-form.git
 cd address-form
+Milestone 23: Select Address Page & Order Placement
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Implement a "Place Order" button inside the cart.
+Create a "Select Address" page that retrieves and displays all saved addresses from the database.
+Allow users to select a delivery address before placing an order.
+Features Implemented 🚀
+Backend:
+Updated user.js (Routes)
+
+Added a GET /fetch-addresses endpoint to retrieve all addresses for a user.
+Integrated address retrieval logic using userModel.
+Updated userModel.js (Schema)
+
+Ensured addresses are stored as an array inside the user schema.
+Frontend:
+Created SelectAddress.jsx
+
+Fetched user addresses using Axios (/auth/fetch-addresses).
+Displayed all available addresses.
+Allowed users to select a preferred address.
+Updated App.jsx
+
+Added a route for /select-address.
+Integrated SelectAddress into the application.
+How to Use 🛠️
+Navigate to /cart and click the "Place Order" button.
+You'll be redirected to the /select-address page.
+Choose a delivery address from the available options.
+Confirm the selection to proceed with the order.
+Technologies Used 🏗️
+Frontend: React, Axios, React Router
+Backend: Express, MongoDB, Mongoose, JWT Authentication
+Next Steps 🔜
+Implement order placement logic.
+Connect order details with a payment gateway.
+Enhance UI/UX for a smoother checkout experience.
+🛒 Milestone 24 - Order Confirmation Page
+🎯 Learning Goals
+By the end of this milestone, you will:
+
+Implement an Order Confirmation Page in the frontend.
+Use Axios to fetch and display order details.
+Ensure a smooth user experience post-purchase.
+📌 Features to Implement
+Display Order Summary
+
+Fetch and display product details, quantity, and price.
+Show total cost of the order.
+Address Selection
+
+Retrieve and display the selected shipping address.
+Payment Confirmation
+
+Show payment status (Success/Failure).
+Display Order ID.
+User Feedback
+
+Add a thank-you message and navigation buttons.
+🏗️ Folder Structure
+🔗 API Endpoints
+Method	Endpoint	Description
+GET	/order/confirmation	Fetch order details
+GET	/auth/get-addresses	Retrieve stored user addresses
+🔧 Tech Stack
+Frontend: React, Axios, React Router
+Backend: Express.js, MongoDB
+Authentication: JWT
+🚀 Steps to Implement
+Create OrderConfirmation.jsx
+Fetch Order Details using axios.get('/order/confirmation')
+Display Order ID, Products, and Address
+Style the page for a smooth UX
+Update App.jsx to add a new route
+📝 Example Code (OrderConfirmation.jsx)
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+const OrderConfirmation = () => {
+  const [order, setOrder] = useState(null);
+
+  useEffect(() => {
+    axios.get("/order/confirmation").then((response) => {
+      setOrder(response.data);
+    });
+  }, []);
+
+  if (!order) return <p>Loading...</p>;
+
+  return (
+    <div>
+      <h2>🎉 Order Confirmed!</h2>
+      <p>Order ID: {order.id}</p>
+      <p>Total Amount: ${order.total}</p>
+      <p>Shipping Address: {order.address}</p>
+    </div>
+  );
+};
+
+export default OrderConfirmation;
 
 
 
